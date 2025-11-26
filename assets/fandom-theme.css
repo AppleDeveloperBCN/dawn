@@ -1,0 +1,171 @@
+/* Fandom Reigns - Custom Theme CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700;900&display=swap');
+
+:root {
+    --color-neon-purple: #9D00FF;
+    --color-arcane-green: #00FF94;
+    --color-void-black: #050505;
+    --color-silver-text: #E0E0E0;
+    --color-gold-highlight: #FFD700;
+
+    --glow-shadow: 0 0 10px rgba(157, 0, 255, 0.5);
+    --glass-bg: rgba(5, 5, 5, 0.8);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+
+    --font-heading-family: 'Orbitron', sans-serif;
+    --font-body-family: 'Inter', sans-serif;
+}
+
+/* Global Typography Overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: var(--font-heading-family);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-silver-text);
+}
+
+body {
+    font-family: var(--font-body-family);
+}
+
+/* Button Glow Effects */
+.button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    box-shadow: 0 0 15px var(--color-neon-purple);
+    border-color: var(--color-neon-purple);
+}
+
+.button--secondary {
+    color: var(--color-arcane-green);
+    border-color: var(--color-arcane-green);
+}
+
+.button--secondary:hover {
+    box-shadow: 0 0 15px var(--color-arcane-green);
+    background: rgba(0, 255, 148, 0.1);
+}
+
+/* Card Styling - Glassmorphism & Glow */
+.card {
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glow-shadow);
+    border-color: var(--color-neon-purple);
+}
+
+/* Header Glassmorphism */
+.header-wrapper {
+    background: rgba(5, 5, 5, 0.85) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(157, 0, 255, 0.2);
+}
+
+.header__menu-item:hover,
+.header__active-menu-item {
+    color: var(--color-neon-purple) !important;
+    text-shadow: 0 0 8px var(--color-neon-purple);
+}
+
+/* Badge Styling */
+.badge {
+    background-color: var(--color-neon-purple);
+    color: #fff;
+    border: none;
+    box-shadow: 0 0 5px var(--color-neon-purple);
+}
+
+/* Footer Customization */
+.footer {
+    background-color: #000 !important;
+    border-top: 1px solid var(--color-neon-purple);
+}
+
+.footer__content-top {
+    padding-top: 4rem;
+}
+
+.footer-block__heading {
+    color: var(--color-arcane-green);
+    text-shadow: 0 0 5px rgba(0, 255, 148, 0.5);
+}
+
+/* Product Card Typography */
+.card__heading {
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    color: var(--color-silver-text);
+}
+
+.price-item--regular,
+.price-item--sale {
+    color: var(--color-gold-highlight);
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+/* Hero Section Effects */
+.banner__media::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.banner__heading {
+    text-shadow: 0 0 10px var(--color-neon-purple), 0 0 20px black;
+}
+
+/* Collection Grid Items */
+.collection-grid-item__title {
+    font-family: var(--font-heading-family);
+    color: var(--color-silver-text);
+    text-transform: uppercase;
+}
+
+.collection-card:hover {
+    box-shadow: 0 0 20px rgba(157, 0, 255, 0.3);
+    border-color: var(--color-neon-purple);
+}
+
+/* Global Scanline Effect (Optional - can be toggled) */
+/* 
+body::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+*/
